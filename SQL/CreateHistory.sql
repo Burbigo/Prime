@@ -1,9 +1,7 @@
-create table history
+use Prime
+create table History
 (
- logint varchar(20) not null,
- Email varchar(20) not null,
- Last_visit datetime  not null,
- foreign key (logint) references users(LOGINt),
- foreign key (Email) references users(EMAIL)
- )
-select * from history
+ ID int identity(1,1) not null,
+ Username varchar(20) not null,
+ Last_visit varchar(20),
+)
