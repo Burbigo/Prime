@@ -1,1 +1,2 @@
-create database prime
+create database Prime
+collate Latin1_General_CS_AI
