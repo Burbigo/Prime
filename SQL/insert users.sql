@@ -1,7 +1,4 @@
-use prime
-INSERT INTO users VALUES
-('ras1','qwerty','haaakd@google.com','admin'),
-('vas1','ytrewq','nordis@google.com','engineer'),
-('kvas1','qwerty','kaalt@google.com','user'),
-('bras1','ytrewq','kuurz@google.com','user')
-select*from users
+use Prime
+insert into Users values
+('Rostyslav','Hutii','Admin','burbigo123@gmail.com','prime','Admin'),
+('Vadym','Kozodoi','Engineer','Vadim-0497@rambler.ru','prime','Engineer')
