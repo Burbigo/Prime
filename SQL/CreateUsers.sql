@@ -1,9 +1,11 @@
-create table users
+use Prime
+create table Users
 (
-USERID int IDENTITY(1,1) PRIMARY KEY,
-LOGINt VARCHAR(20) NOT NULL unique,
-PASSWORDt VARCHAr(20) NOT NULL,
-EMAIL VARCHAR(20) NOT NULL unique,
-USER_STATUS VARCHAR(20) NOT NULL
+ ID int identity(1,1) primary key,
+ Name varchar(15) not null,
+ Surname varchar(15) not null,
+ Username varchar(20) not null unique,
+ Email varchar(25) not null unique,
+ Сountersign varchar(20) not null,
+ User_status varchar(20) not null,
 )
-select * from users
