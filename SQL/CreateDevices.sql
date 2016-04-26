@@ -1,14 +1,13 @@
-create table devices
+use Prime
+create table Devices
  (
- device_model varchar(20) not null,
- device_type varchar(20) not null,
- device_id int identity(1,1) primary key,
- device_ip varchar(15) unique not null,
- subnet int not null,
- device_status varchar(15) not null,
- date_of_production date,
- last_change varchar(40),
- date_of_last_change date
+ ID int identity(1,1) primary key,
+ Name varchar(20) not null unique,
+ Device_type varchar(20) not null,
+ Device_status varchar(15) not null,
+ Subnet_name varchar(15) not null,
+ IP_adress varchar(15) not null unique,
+ Date_of_production date not null,
+ Last_change varchar(40),
+ Date_of_last_change date
  )
- 
- select * from devices
