@@ -134,11 +134,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(122, 129);
+            this.label5.Location = new System.Drawing.Point(116, 129);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 43;
-            this.label5.Text = "Autor";
+            this.label5.Text = "Author";
             // 
             // label6
             // 
