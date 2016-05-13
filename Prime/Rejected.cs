@@ -9,8 +9,9 @@ namespace Prime
         private static string ID;
         public Rejected(string id)
         {
-            ID = id;
+            CenterToScreen();
             InitializeComponent();
+            ID = id;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,15 +26,16 @@ namespace Prime
                 connection.Open();
                 cmd =
                     new SqlCommand(
-                        "UPDATE Operations SET Cause_of_rejection='" + textBox1.Text + "' WHERE ID='" + ID + "'",
+                        "UPDATE Operations SET Cause_of_rejection='" + @textBox1.Text + "' WHERE ID='" + ID + "'",
                         connection);
                 cmd.ExecuteNonQuery();
+                MessageBox.Show(@"Cause added successfuly");
+                Close();
             }
-            catch (Exception exp)
+            catch 
             {
-                MessageBox.Show(exp.Message);
-            }
-            Close();
+                MessageBox.Show("Cause doesn't added\nCheck input text");
+            } 
         }
     }
 }

@@ -8,5 +8,5 @@ create table Operations
  Engineer varchar(20) not null, 
  Author varchar(20)not null,
  Status_of_operation varchar(15) not null,
- Cause_of_rejection varchar
+ Cause_of_rejection varchar(50)
 )
