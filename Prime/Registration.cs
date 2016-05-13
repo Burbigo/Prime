@@ -30,58 +30,61 @@ namespace Prime
             if (textBox6.Text.Length == 0 || textBox5.Text.Length == 0 || textBox1.Text.Length == 0 ||
                 textBox2.Text.Length == 0 || textBox3.Text.Length == 0)
                 MessageBox.Show("One of the fields is empty\nPlease fill in all fields");
-            try
+            else
             {
-                connection.Open();
-                cmd = new SqlCommand("SELECT * FROM Users WHERE Username='" + textBox1.Text + "'", connection);
-                sdr = cmd.ExecuteReader();
-                if (sdr.Read())
+                try
                 {
-                    MessageBox.Show(@"User with this login is already exist");
-                }
-                else
-                {
-                    connection.Close();
                     connection.Open();
-                    cmd = new SqlCommand("SELECT * FROM Users WHERE Email='" + textBox2.Text + "'", connection);
+                    cmd = new SqlCommand("SELECT * FROM Users WHERE Username='" + textBox1.Text + "'", connection);
                     sdr = cmd.ExecuteReader();
                     if (sdr.Read())
                     {
-                        MessageBox.Show(@"User with this email is alreade exist");
+                        MessageBox.Show(@"User with this login is already exist");
                     }
                     else
                     {
                         connection.Close();
-                        try
+                        connection.Open();
+                        cmd = new SqlCommand("SELECT * FROM Users WHERE Email='" + textBox2.Text + "'", connection);
+                        sdr = cmd.ExecuteReader();
+                        if (sdr.Read())
                         {
-                            connection.Open();
-                            cmd =
-                                new SqlCommand(
-                                    "INSERT INTO Users VALUES(@name,@surname,@username,@email,@password,@status)",
-                                    connection);
-
-                            cmd.Parameters.Add("@name", textBox6.Text);
-                            cmd.Parameters.Add("@surname", textBox5.Text);
-                            cmd.Parameters.Add("@username", textBox1.Text);
-                            cmd.Parameters.Add("@email", textBox2.Text);
-                            cmd.Parameters.Add("@password", textBox3.Text);
-                            cmd.Parameters.Add("@status", textBox4.Text);
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show(@"You successfully registered");
-                            Close();
-
+                            MessageBox.Show(@"User with this email is alreade exist");
                         }
-                        catch (Exception exp)
+                        else
                         {
+                            connection.Close();
+                            try
+                            {
+                                connection.Open();
+                                cmd =
+                                    new SqlCommand(
+                                        "INSERT INTO Users VALUES(@name,@surname,@username,@email,@password,@status)",
+                                        connection);
 
-                            MessageBox.Show(exp.Message);
+                                cmd.Parameters.Add("@name", textBox6.Text);
+                                cmd.Parameters.Add("@surname", textBox5.Text);
+                                cmd.Parameters.Add("@username", textBox1.Text);
+                                cmd.Parameters.Add("@email", textBox2.Text);
+                                cmd.Parameters.Add("@password", textBox3.Text);
+                                cmd.Parameters.Add("@status", textBox4.Text);
+                                cmd.ExecuteNonQuery();
+                                MessageBox.Show(@"You successfully registered");
+                                Close();
+
+                            }
+                            catch (Exception exp)
+                            {
+
+                                MessageBox.Show(exp.Message);
+                            }
                         }
                     }
                 }
-            }
-            catch (Exception exp)
-            {
-                MessageBox.Show(exp.Message);
+                catch (Exception exp)
+                {
+                    MessageBox.Show(exp.Message);
+                }
             }
         }
     }

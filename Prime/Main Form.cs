@@ -62,8 +62,8 @@ namespace Prime
                 var sda = new SqlDataAdapter(cmd);
                 var dt = new DataTable();
                 sda.Fill(dt);
-                dataGridView1.DataSource = dt;
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView.DataSource = dt;
+                dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception exp)
             {
@@ -81,8 +81,8 @@ namespace Prime
                 var sda = new SqlDataAdapter(cmd);
                 var dt = new DataTable();
                 sda.Fill(dt);
-                dataGridView1.DataSource = dt;
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView.DataSource = dt;
+                dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             }
             catch (Exception exp)
@@ -101,8 +101,8 @@ namespace Prime
                 var sda = new SqlDataAdapter(cmd);
                 var dt = new DataTable();
                 sda.Fill(dt);
-                dataGridView1.DataSource = dt;
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView.DataSource = dt;
+                dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception exp)
             {
@@ -121,8 +121,8 @@ namespace Prime
                 var sda = new SqlDataAdapter(cmd);
                 var dt = new DataTable();
                 sda.Fill(dt);
-                dataGridView1.DataSource = dt;
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView.DataSource = dt;
+                dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception exp)
             {
@@ -141,8 +141,8 @@ namespace Prime
                 var sda = new SqlDataAdapter(cmd);
                 var dt = new DataTable();
                 sda.Fill(dt);
-                dataGridView1.DataSource = dt;
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView.DataSource = dt;
+                dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception exp)
             {

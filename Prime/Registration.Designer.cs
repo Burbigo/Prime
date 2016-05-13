@@ -59,7 +59,7 @@
             this.textBox2.Location = new System.Drawing.Point(150, 99);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(129, 20);
-            this.textBox2.TabIndex = 14;
+            this.textBox2.TabIndex = 30;
             // 
             // label2
             // 
@@ -115,7 +115,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(129, 20);
-            this.textBox3.TabIndex = 17;
+            this.textBox3.TabIndex = 31;
             // 
             // label4
             // 
@@ -131,14 +131,14 @@
             this.textBox1.Location = new System.Drawing.Point(150, 73);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(129, 20);
-            this.textBox1.TabIndex = 25;
+            this.textBox1.TabIndex = 29;
             // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(150, 47);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(129, 20);
-            this.textBox5.TabIndex = 26;
+            this.textBox5.TabIndex = 28;
             // 
             // textBox6
             // 
@@ -167,6 +167,7 @@
             // 
             // Registration
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(359, 231);

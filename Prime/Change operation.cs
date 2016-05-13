@@ -172,6 +172,11 @@ namespace Prime
 
                         connection.Close();
                         connection.Open();
+                        if (comboBox1.Text == "Rejected")
+                        {
+                            var rejected = new Rejected(textBox1.Text);
+                            rejected.ShowDialog();
+                        }
                         cmd =
                             new SqlCommand(
                                 "UPDATE Operations SET Status_of_operation='" + comboBox1.Text + "' WHERE ID='" +
