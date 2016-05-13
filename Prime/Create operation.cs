@@ -86,7 +86,7 @@ namespace Prime
                                             connection.Open();
                                             cmd =
                                                 new SqlCommand(
-                                                    "INSERT INTO Operations VALUES(@name,@subnet,@device,@engineer,@autor,@status)",
+                                                    "INSERT INTO Operations VALUES(@name,@subnet,@device,@engineer,@autor,@status,@reject)",
                                                     connection);
                                             cmd.Parameters.Add("@name", comboBox1.Text);
                                             cmd.Parameters.Add("@subnet", textBox2.Text);
@@ -94,6 +94,7 @@ namespace Prime
                                             cmd.Parameters.Add("@engineer", textBox3.Text);
                                             cmd.Parameters.Add("@autor", textBox5.Text);
                                             cmd.Parameters.Add("@status", textBox4.Text);
+                                            cmd.Parameters.Add("@reject", "");
                                             cmd.ExecuteNonQuery();
                                             MessageBox.Show("Operation created successfully");
                                             Close();
