@@ -107,7 +107,7 @@ namespace Prime
                             sdr = cmd.ExecuteReader();
                             if (sdr.Read())
                             {
-                                if (sdr.GetString(0) == "Connecting")
+                                if (sdr.GetString(0) == "Repairing")
                                 {
                                     connection.Close();
                                     connection.Open();
@@ -116,19 +116,19 @@ namespace Prime
                                     sdr = cmd.ExecuteReader();
                                     if (sdr.Read())
                                         status = sdr.GetString(0);
-                                    if (status == "New" && comboBox1.Text == "Completed")
+                                    if (status == "Operating" && comboBox1.Text == "In progress")
                                     {
                                         connection.Close();
                                         connection.Open();
                                         cmd = new SqlCommand(
-                                            "UPDATE Devices SET Device_status='Operating' WHERE Name='" + device + "'",
+                                            "UPDATE Devices SET Device_status='Repairing' WHERE Name='" + device + "'",
                                             connection);
                                         cmd.ExecuteNonQuery();
 
                                         connection.Close();
                                         connection.Open();
                                         cmd = new SqlCommand(
-                                            "UPDATE Devices SET Last_change='New-->Operating' WHERE Name='" + device +
+                                            "UPDATE Devices SET Last_change='Operating-->Repairing' WHERE Name='" + device +
                                             "'", connection);
                                         cmd.ExecuteNonQuery();
                                     }
@@ -150,20 +150,20 @@ namespace Prime
                                         cmd.ExecuteNonQuery();
                                     }
                                 }
-                                if (sdr.GetString(0) == "Repairing" && comboBox1.Text == "Completed")
+                                if (sdr.GetString(0) == "Connecting" && comboBox1.Text == "Completed")
                                 {
 
                                     connection.Close();
                                     connection.Open();
                                     cmd = new SqlCommand(
-                                        "UPDATE Devices SET Device_status='Repairing' WHERE Name='" + device + "'",
+                                        "UPDATE Devices SET Device_status='Operating' WHERE Name='" + device + "'",
                                         connection);
                                     cmd.ExecuteNonQuery();
 
                                     connection.Close();
                                     connection.Open();
                                     cmd = new SqlCommand(
-                                        "UPDATE Devices SET Last_change='Operating-->Repairing' WHERE Name='" + device +
+                                        "UPDATE Devices SET Last_change='New-->Operating' WHERE Name='" + device +
                                         "'", connection);
                                     cmd.ExecuteNonQuery();
                                 }
@@ -191,7 +191,7 @@ namespace Prime
                 }
                 catch (Exception exp)
                 {
-                    MessageBox.Show("Operation doesn't changed\n"+exp.Message);
+                    MessageBox.Show("Operation doesn't changed\n" + exp.Message);
                 }
             }
         }
