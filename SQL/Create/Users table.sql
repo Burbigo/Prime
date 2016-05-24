@@ -6,6 +6,6 @@ create table Users
  Surname varchar(15) not null,
  Username varchar(20) not null unique,
  Email varchar(25) not null unique,
- Ñountersign varchar(20) not null,
+ Countersign varchar(20) not null,
  User_status varchar(20) not null,
 )
