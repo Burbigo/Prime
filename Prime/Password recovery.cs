@@ -77,7 +77,7 @@ namespace Prime
                             new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Prime;Integrated Security=True");
                         connection.Open();
                         cmd = new SqlCommand(
-                            "UPDATE Users SET Сountersign='" + finalString + "' WHERE Email='" + textBox1.Text + "'",
+                            "UPDATE Users SET Countersign='" + finalString + "' WHERE Email='" + textBox1.Text + "'",
                             connection);
                         cmd.ExecuteNonQuery();
                     }

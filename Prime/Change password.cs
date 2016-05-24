@@ -49,7 +49,7 @@ namespace Prime
                         connection.Open();
                         cmd =
                             new SqlCommand(
-                                "UPDATE Users SET Сountersign='" + textBox2.Text + "' WHERE Username='" + textBox1.Text +
+                                "UPDATE Users SET Countersign='" + textBox2.Text + "' WHERE Username='" + textBox1.Text +
                                 "'", connection);
                         cmd.ExecuteReader();
                         MessageBox.Show("Password changed successfully\nAnother time pls dont forget the password)");

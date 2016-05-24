@@ -31,7 +31,7 @@ namespace Prime
                 try
                 {
                     connection.Open();
-                    var cmd = new SqlCommand("SELECT Сountersign FROM Users WHERE Username='" + textBox3.Text + "'", connection);
+                    var cmd = new SqlCommand("SELECT Countersign FROM Users WHERE Username='" + textBox3.Text + "'", connection);
                     var sdr = cmd.ExecuteReader();
                     if (sdr.Read())
                     {
