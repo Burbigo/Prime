@@ -102,7 +102,7 @@ namespace Prime
                     }
                     catch (Exception exp)
                     {
-                        MessageBox.Show(exp.Message, @"Device doesn't added");
+                        MessageBox.Show(@"Device with this name is already added");
                     }
                 }
             }
